@@ -12,3 +12,9 @@ ul li {
 a {
   text-decoration: none;
 }
+/*
+li:hover {
+    text-decoration: underline;
+    notes: this is not how we are to do this portion of the code
+}
+*/
