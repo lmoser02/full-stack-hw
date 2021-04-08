@@ -7,7 +7,7 @@ a {
   box-sizing: border-box;
 }
 .card {
-  border: 1px slategray solid;
+  border: 2px rgb(160, 165, 171) solid;
   border-radius: 5px;
   padding: 16px;
   text-align: center;
@@ -17,6 +17,7 @@ a {
   width: 33%;
   padding: 0 5px;
 }
+
 .row {
   margin: 0 -5px;
 }
@@ -24,4 +25,15 @@ a {
   content: "";
   display: table;
   clear: both;
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+img {
+  width: 100%;
+  height: auto;
 }
