@@ -2,6 +2,7 @@
 
 a {
   color: var(--lightteal);
+  text-decoration: none;
 }
 * {
   box-sizing: border-box;
@@ -10,7 +11,7 @@ a {
   border: 2px rgb(160, 165, 171) solid;
   border-radius: 5px;
   padding: 16px;
-  text-align: center;
+  text-align: left;
 }
 .column {
   float: left;
@@ -36,4 +37,9 @@ a {
 img {
   width: 100%;
   height: auto;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: var(--grey2);
 }
