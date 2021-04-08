@@ -3,3 +3,25 @@
 a {
   color: var(--lightteal);
 }
+* {
+  box-sizing: border-box;
+}
+.card {
+  border: 1px slategray solid;
+  border-radius: 5px;
+  padding: 16px;
+  text-align: center;
+}
+.column {
+  float: left;
+  width: 33%;
+  padding: 0 5px;
+}
+.row {
+  margin: 0 -5px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
