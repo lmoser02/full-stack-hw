@@ -8,7 +8,7 @@ a {
   box-sizing: border-box;
 }
 .card {
-  border: 2px rgb(160, 165, 171) solid;
+  border: 2px #aaaaaa solid;
   border-radius: 5px;
   padding: 16px;
   text-align: left;
@@ -22,6 +22,7 @@ a {
 .row {
   margin: 0 -5px;
 }
+
 .row:after {
   content: "";
   display: table;
@@ -42,4 +43,10 @@ img {
 h2 {
   font-size: 1.5em;
   color: var(--grey2);
+}
+
+p {
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.2em;
+  color: #555555;
 }
