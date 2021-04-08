@@ -2,7 +2,7 @@
 
 /* The color used in this exercise is teal */
 ul {
-  padding-left: 0;
+  padding-left: 10px;
   list-style-type: none;
 }
 ul li {
@@ -14,5 +14,7 @@ a {
 }
 
 li:hover {
-  text-decoration: underline;
+  color: teal;
+  border-bottom: 3px solid teal;
+  font-size: 18px;
 }
