@@ -10,10 +10,36 @@
   </head>
   <body>
     <main>
+      <div class = "card">
       <form action="">
+        <h2>Contact Form</h2>
+          <div class = "inputelement">
+            <label>Name<span class ="required">(required)</span></label>
+            <br/>
+            <input type="text" id="name" name="name"/>
+          </div>
+          <div class = "inputelement">
+            <label>Email<span class = "required">(required)</span></label>
+            <br/>
+            <input type="text" id="email" name="email"/>
+          </div>
+          <div class = "inputelement">
+            <label>Comment</label>
+            <br/>
+            <textarea rows="6" name="comment"></textarea>
+          </div>
+          <div class="box_check inputelement">
+            <input type="checkbox" id="signup" name="signup" checked="checked"/>
+            <label for="signup">Sign up for the newsletter</label>
+          </div>
+          <div class="submitbutton inputelement">
+            <input type="submit" id="submit" name="submit" class="button"/>
+          </div>
         <!-- 03 - Form Exercise -->
         <!-- Add your code below -->
+        </div>
       </form>
+    </div>
     </main>
   </body>
 </html>

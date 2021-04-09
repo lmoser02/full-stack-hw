@@ -16,7 +16,11 @@ a {
 a:hover {
   color: teal;
   border-bottom: 3px solid teal;
-  font-size: 18px;
+  text-decoration: none;
+}
+a:active {
+  color: teal;
+  border-bottom: 3px solid teal;
   text-decoration: none;
 }
 

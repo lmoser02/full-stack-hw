@@ -7,3 +7,43 @@
 body {
   background-color: var(--teal);
 }
+
+form {
+  margin: 0 auto;
+  border: 2px;
+  border-radius: 4px;
+  background-color: white;
+  padding: 12px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.inputelement {
+  margin-bottom: 1em;
+}
+
+.required {
+  color: teal;
+}
+
+input[type="text"],
+input[type="submit"] {
+  width: 100%;
+  font-size: 1.2em;
+}
+
+textarea {
+  width: 100%;
+  font-size: 1.2em;
+}
+
+.button {
+  background-color: teal;
+  color: white;
+}
+.button:hover {
+  background-color: white;
+  color: black;
+}
