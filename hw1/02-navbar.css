@@ -23,7 +23,11 @@ a:active {
   border-bottom: 3px solid teal;
   text-decoration: none;
 }
-
+a:focus {
+  color: teal;
+  border-bottom: 3px solid teal;
+  text-decoration: none;
+}
 li {
   text-decoration: none;
 }

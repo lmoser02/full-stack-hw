@@ -36,7 +36,11 @@ input[type="submit"] {
   width: 100%;
   font-size: 1.2em;
 }
-
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  font-size: 1.2em;
+}
 textarea {
   width: 100%;
   font-size: 1.2em;
