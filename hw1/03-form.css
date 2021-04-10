@@ -6,6 +6,7 @@
 
 body {
   background-color: var(--teal);
+  /*margin: 100px auto;*/
 }
 
 form {
