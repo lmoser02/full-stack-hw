@@ -6,9 +6,10 @@
 
 body {
   background-color: var(--teal);
-  /*margin: 100px auto;*/
 }
-
+.card {
+  margin-top: 6em;
+}
 form {
   margin: 0 auto;
   border: 2px;
