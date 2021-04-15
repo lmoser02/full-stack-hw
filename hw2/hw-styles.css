@@ -11,19 +11,39 @@ h1 {
 }
 
 /* Code for exercise 02-flex */
-.flex-item1 {
-  display: flex;
-  align-items: flex-start;
-}
+
 .flex-container-columns {
-  height: 400px;
+  height: 300px;
   display: flex;
-  flex-flow: column-reverse wrap;
-  align-items: flex-end;
+  flex-flow: column-reverse wrap-reverse;
+  align-items: center;
+}
+
+.flex-container-columns > .flex-item1 {
+  order: 2;
 }
 
 /* Code for exercise 03-grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 8em);
+  gap: 10px;
+}
 
+.grid-item5 {
+  order: -1;
+  grid-row: span 2;
+  grid-column: span 3;
+}
+
+.grid-item7 {
+  grid-column: span 4;
+}
+
+.grid-item9 {
+  grid-column: span 3;
+}
 /* Code for exercise 04-bootstrap-grid */
 
 /* Code for exercise 05-bootstrap-form */
