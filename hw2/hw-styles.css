@@ -11,6 +11,16 @@ h1 {
 }
 
 /* Code for exercise 02-flex */
+.flex-item1 {
+  display: flex;
+  align-items: flex-start;
+}
+.flex-container-columns {
+  height: 400px;
+  display: flex;
+  flex-flow: column-reverse wrap;
+  align-items: flex-end;
+}
 
 /* Code for exercise 03-grid */
 
