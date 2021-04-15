@@ -4,6 +4,11 @@ h1 {
 }
 
 /* Code for exercise 01-flex */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 
 /* Code for exercise 02-flex */
 
