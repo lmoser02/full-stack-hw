@@ -45,12 +45,35 @@ h1 {
   grid-column: span 3;
 }
 /* Code for exercise 04-bootstrap-grid */
+
 .row > * {
-  height: 200px;
+  height: 75px;
   border: 1px solid white;
-  background-color: purple;
   color: white;
   font-size: 2em;
+}
+
+.row1 {
+  background-color: navy;
+}
+
+.row2 {
+  background-color: purple;
+}
+
+.row3 {
+  background-color: #c71585;
+}
+
+.row4 {
+  background-color: red;
+}
+
+.row5 {
+  background-color: green;
+}
+.col2 {
+  background-color: teal;
 }
 
 /* Code for exercise 05-bootstrap-form */
