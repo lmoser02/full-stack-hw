@@ -66,14 +66,27 @@ h1 {
 }
 
 .row4 {
-  background-color: red;
+  background-color: teal;
 }
 
 .row5 {
   background-color: green;
 }
-.col2 {
-  background-color: teal;
+.col3 {
+  background-color: red;
 }
 
 /* Code for exercise 05-bootstrap-form */
+
+h2 {
+  text-align: center;
+  color: #555555;
+}
+
+button {
+  width: 49%;
+}
+
+form {
+  width: 400px;
+}
