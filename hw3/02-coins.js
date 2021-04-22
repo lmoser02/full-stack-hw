@@ -1,5 +1,29 @@
+let change = {
+  dollars: 0,
+  quarters: 0,
+  dimes: 0,
+  nickels: 0,
+  pennies: 0
+};
 let calculateChange = (input) => {
-  // Add your code here
+  // Add your code hereA
+    input = input * 100;
+
+    change.dollars = Math.floor(input/100);
+    input = input%100;
+
+    change.quarters = Math.floor(input/25);
+    input = input%25;
+
+    change.dimes = Math.floor(input/10);
+    input = input%10;
+
+    change.nickels = Math.floor(input/5);
+    input = input%5;
+
+    change.pennies = input;
+
+    return change;
 };
 
 // Sample Test Cases
