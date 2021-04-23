@@ -7,8 +7,11 @@ let change = {
 };
 let calculateChange = (input) => {
   // Add your code hereA
-    input = input * 100;
-
+    if(input > 15){
+      return "Error: Number is too large."
+    }
+    input = input * 100
+      
     change.dollars = Math.floor(input/100);
     input = input%100;
 
