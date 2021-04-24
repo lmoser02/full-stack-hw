@@ -1,23 +1,20 @@
 const url = 'https://restcountries.eu/rest/v2/all';
 
-let app = document.querySelector("#app");
 
 let getData = (url) => {
-  // Add your code herei
+  // Add your code here
   fetch(url)
-    .then(response => response.json())
+    .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      let result = document.querySelector('#results')
       data.forEach((country) => {
-        console.log('${country.name[0]}- ${country.population[0]}');
-        let element = document.createElement("div");
-        element.textContent = '${country.name[0]} - ${country.population[0]}';
-        app.append(element);
+        let element = document.createElement("LI");
+        let words = document.createTextNode(`${country.name} - ${Number(country.population).toLocaleString("en-US")}`)
+        element.append(words);
+        result.append(element);
       });
     })
    .catch((error) => console.log("Error", error))
-   .finally(()=>console.log("Run no matter what"));
-
 
 };
 
