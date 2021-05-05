@@ -44,6 +44,47 @@ app.get('/welcome', (req, res) => {});
 
 // Add your code here
 
+app.get('/redirect',(req, res) => { 
+  res.writeHead(302, {Location: "/redirected"});
+    res.end();
+});
+
+app.get('/redirected',(req, res) => { 
+  res.status(302);
+  res.set({'Content-Type': 'text/html'});
+  res.write('<h1>You have been being redirected</h1>');
+  res.end();
+});
+
+app.get('/cache',(req, res) => { 
+  res.setHeader('Cache-control','Max-Age=86400');
+    res.write('<h1>This resource has been cached</h1>');
+    res.end();
+});
+
+app.get('/cookie',(req, res) => { 
+  res.setHeader('Set-Cookie','hello=world');
+    res.write('<h1>Cookies....yummmmm</h1>');
+    res.end();
+});
+
+app.get('/check-cookies',(req, res) => { 
+  res.writeHead(200, {"Content-Type": 'text/html'});
+    let result = 'No';
+    if(req.headers.cookie === 'hello=world'){
+      result = 'Yes';
+    }
+    res.write(`Presence of hello=world cookie on site: ${result}`);
+    res.end();
+});
+  
+  app.use((req, res) => { 
+    res.status(400);
+    res.set({'Content-Type': 'text/html'});
+    res.send('<h1>404: Page not found</h1>');
+    res.end();
+  });
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
