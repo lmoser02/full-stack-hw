@@ -4,7 +4,8 @@ const app = express();
 const port = process.env.PORT || 5000;
 const file = new static.Server('./public');
 const bodyParser = require('body-parser');
-app.use(bodyParser.json());
+
+app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 
 app.get('/',(req, res)=> {
@@ -12,7 +13,15 @@ app.get('/',(req, res)=> {
 });
 
 app.post('submit', (req,res)=>{
-  
+  req.write(`<p>Name: ${req.body.name} </p>`);
+  res.write(`<p>Email: ${req.body.email}</p>`);
+  let comments = (req.body.comments === '') ? 'N/A': req.body.comments;
+  res.write(`<p> Comments: ${comments} </p>`);
+  let newsletter = (req.body.checked === true) ? 'Yes, sign me up ' : "No, don't sign me up";
+  res.write(`<p>Newsletter: ${signup}</p>`);
+  res.end();
+
+
 
 });
 
