@@ -79,7 +79,7 @@ app.get('/check-cookies',(req, res) => {
 });
   
   app.use((req, res) => { 
-    res.status(400);
+    res.status(404);
     res.set({'Content-Type': 'text/html'});
     res.send('<h1>404: Page not found</h1>');
     res.end();
