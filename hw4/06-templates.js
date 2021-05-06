@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const fetch = require('node-fetch');
 const port = process.env.PORT || 5000;
 
 // Use Pug as the templating engine
@@ -32,6 +33,14 @@ app.get('/capitals', (req, res) => {
 
   results = ['Afghanistan', 'Aland Islands', 'Albania'];
 
+  const c_url = 'https://restcountries.eu/rest/v2/capital/tallinn';
+
+  fetch(c_url, {method: 'Get'})
+  .then((response)=> response.json())
+  .then((data) => {
+    console.log(data);
+  })
+
   res.render('page', {
     heading: 'Countries and Capitals',
     results: results,
@@ -44,6 +53,7 @@ app.get('/populous', (req, res) => {
   // map the resulting array into a new array with the country name and formatted population
 
   results = ['China', 'India', 'United States of America'];
+  
 
   res.render('page', {
     heading: 'Most Populous Countries',

@@ -12,13 +12,13 @@ app.get('/',(req, res)=> {
   file.serve(req,res);
 });
 
-app.post('submit', (req,res)=>{
-  req.write(`<p>Name: ${req.body.name} </p>`);
+app.post('/submit', (req,res)=>{
+  res.write(`<p>Name: ${req.body.name} </p>`);
   res.write(`<p>Email: ${req.body.email}</p>`);
   let comments = (req.body.comments === '') ? 'N/A': req.body.comments;
   res.write(`<p> Comments: ${comments} </p>`);
-  let newsletter = (req.body.checked === true) ? 'Yes, sign me up ' : "No, don't sign me up";
-  res.write(`<p>Newsletter: ${signup}</p>`);
+  let newsletter = (req.body.signup) ? 'Yes, sign me up ' : "No, don't sign me up";
+  res.write(`<p>Newsletter: ${newsletter}</p>`);
   res.end();
 
 
