@@ -34,10 +34,11 @@ const server = http.createServer((req, res) => {
 
   // Add your code here
   else{
-    res.write('<table>');
+    res.write('<table border = "1px">');
     const parsd = new URL(url.href);
     parsd.searchParams.forEach(function(value,key){
       res.write(`<tr><td>${key}</td><td>${value}</td></tr>`);
+      res.write
     });
     res.write('</table>');
     res.end();
