@@ -10,7 +10,8 @@ app.set('view engine', 'pug');
 // REST Countries URL
 const url = 'https://restcountries.eu/rest/v2/all';
 
-// Add your code here
+// Add your code hereA
+app.use(express.static('/public'));
 
 app.get('/', (req, res) => {
   // render pug template for the index.html file
@@ -34,27 +35,31 @@ app.get('/capitals', (req, res) => {
   //results = ['Afghanistan', 'Aland Islands', 'Albania'];
   //need to put results in the form needed for printing
 
-  //const c_url = 'https://restcountries.eu/rest/v2/capital/tallinn';
   const url = 'https://restcountries.eu/rest/v2/all';
 
   fetch(url,{Method: 'Get'})
   .then((response)=> response.json())
   .then((data) => {
-    console.log(data);
     let results = [];
     data.forEach((country) => {
-      let element = document.createElement("li");
-      let words = document.createElement(`${country.name} - ${country.capital}`);
-      element.append(words);
-      results.append(element);
+     const grab = {"name":country.name, "capital": country.capital}
+     console.log(grab.name, grab.capital);
+     results.push(`${grab.name}, - ${grab.capital}`);
+    });
+    res.render('page', {
+      heading: 'Countries and Capitals',
+      results: results,
     });
   })
   .catch((error) => console.log("Error", error))
-  
+
+  //console.log(results);
+  /*
   res.render('page', {
     heading: 'Countries and Capitals',
     results: results,
   });
+  */
   
 });
 
