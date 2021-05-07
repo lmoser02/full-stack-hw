@@ -53,13 +53,6 @@ app.get('/capitals', (req, res) => {
   })
   .catch((error) => console.log("Error", error))
 
-  //console.log(results);
-  /*
-  res.render('page', {
-    heading: 'Countries and Capitals',
-    results: results,
-  });
-  */
   
 });
 
@@ -68,25 +61,50 @@ app.get('/populous', (req, res) => {
   // sort the resulting array to show the results in order of population
   // map the resulting array into a new array with the country name and formatted population
 
-  results = ['China', 'India', 'United States of America'];
+  //results = ['China', 'India', 'United States of America'];
   
 
-  res.render('page', {
-    heading: 'Most Populous Countries',
-    results: results,
-  });
+  fetch(url,{Method: 'Get'})
+  .then((response)=> response.json())
+  .then((data) => {
+    let results = [];
+    data.forEach((country) => {
+     if(country.population > 50000000){
+      const grab = {"name":country.name, "population": country.population}
+      console.log(grab.name, grab.capital);
+      results.push(`${grab.name}, - ${Number(grab.population).toLocaleString("en-US")}`);
+     }
+    });
+    res.render('page', {
+      heading: 'Most Populous Countries',
+      results: results,
+    });
+  })
+  .catch((error) => console.log("Error", error))
 });
 
 app.get('/regions', (req, res) => {
   // reduce the output array in a resulting object that will feature the numbers of countries in each region
   // disregard empty data from the output array
 
-  results = ['Asia - 50', 'Europe - 53', 'Africa - 60'];
+  //results = ['Asia - 50', 'Europe - 53', 'Africa - 60'];
 
-  res.render('page', {
-    heading: 'Regions of the World',
-    results: results,
-  });
+  fetch(url,{Method: 'Get'})
+  .then((response)=> response.json())
+  .then((data) => {
+    let results = [];
+    data.forEach((country) => {
+      const grab = {"region":country.region, "count": country.count}
+      console.log(grab.region, grab.count);
+      results.push(`${grab.region}, - ${grab.count}`);
+
+    });
+    res.render('page', {
+      heading: 'Regions of the World',
+      results: results,
+    });
+  })
+  .catch((error) => console.log("Error", error))
 });
 
 app.listen(port, () => {
