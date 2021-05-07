@@ -44,11 +44,12 @@ app.get('/capitals', (req, res) => {
     let results = [];
     data.forEach((country) => {
       let element = document.createElement("li");
-      let words = document.createTextNode(`${country.name} - ${(country.capital)}`)
+      let words = document.createElement(`${country.name} - ${country.capital}`);
       element.append(words);
       results.append(element);
     });
   })
+  .catch((error) => console.log("Error", error))
   
   res.render('page', {
     heading: 'Countries and Capitals',
