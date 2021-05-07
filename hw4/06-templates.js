@@ -92,7 +92,7 @@ app.get('/regions', (req, res) => {
   .then((data) => {
     let results = [];
     data.forEach((country) => {
-      //count = 
+      //count = must count countries per region
       const grab = {"region":country.region, "count": country.count}
       console.log(grab.region, grab.count);
       results.push(`${grab.region}, - ${grab.count}`);
