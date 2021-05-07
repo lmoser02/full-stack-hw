@@ -31,20 +31,30 @@ app.get('/capitals', (req, res) => {
   // map the output array to create an array with country names and capitals
   // check for empty data in the output array
 
-  results = ['Afghanistan', 'Aland Islands', 'Albania'];
+  //results = ['Afghanistan', 'Aland Islands', 'Albania'];
+  //need to put results in the form needed for printing
 
-  const c_url = 'https://restcountries.eu/rest/v2/capital/tallinn';
+  //const c_url = 'https://restcountries.eu/rest/v2/capital/tallinn';
+  const url = 'https://restcountries.eu/rest/v2/all';
 
-  fetch(c_url, {method: 'Get'})
+  fetch(url,{Method: 'Get'})
   .then((response)=> response.json())
   .then((data) => {
     console.log(data);
+    let results = [];
+    data.forEach((country) => {
+      let element = document.createElement("li");
+      let words = document.createTextNode(`${country.name} - ${(country.capital)}`)
+      element.append(words);
+      results.append(element);
+    });
   })
-
+  
   res.render('page', {
     heading: 'Countries and Capitals',
     results: results,
   });
+  
 });
 
 app.get('/populous', (req, res) => {

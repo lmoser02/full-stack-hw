@@ -42,12 +42,13 @@ app.get('/', (req, res) => {
     else{
       let ruote = parseurl(req).pathname;
       res.write(`Currently on route: ${ruote}\n`);
-      req.session.views.push(ruote);
       res.write('Previously visited: \n');
       res.write(req.session.views.join('\n'));
-      res.end();
+      if(!req.session.views.includes(ruote)){
+        req.session.views.push(ruote);
+      }
+    res.end(); 
     }
-   
 });
 
 app.listen(port, () => {
