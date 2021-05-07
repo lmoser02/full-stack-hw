@@ -52,8 +52,6 @@ app.get('/capitals', (req, res) => {
     });
   })
   .catch((error) => console.log("Error", error))
-
-  
 });
 
 app.get('/populous', (req, res) => {
@@ -94,6 +92,7 @@ app.get('/regions', (req, res) => {
   .then((data) => {
     let results = [];
     data.forEach((country) => {
+      //count = 
       const grab = {"region":country.region, "count": country.count}
       console.log(grab.region, grab.count);
       results.push(`${grab.region}, - ${grab.count}`);
