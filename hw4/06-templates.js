@@ -44,12 +44,14 @@ app.get('/capitals', (req, res) => {
     data.forEach((country) => {
      const grab = {"name":country.name, "capital": country.capital}
      console.log(grab.name, grab.capital);
-     results.push(`${grab.name}, - ${grab.capital}`);
+     results.push(`${grab.name} - ${grab.capital}`);
     });
+
     res.render('page', {
       heading: 'Countries and Capitals',
       results: results,
     });
+
   })
   .catch((error) => console.log("Error", error))
 });
@@ -70,7 +72,7 @@ app.get('/populous', (req, res) => {
      if(country.population > 50000000){
       const grab = {"name":country.name, "population": country.population}
       console.log(grab.name, grab.capital);
-      results.push(`${grab.name}, - ${Number(grab.population).toLocaleString("en-US")}`);
+      results.push(`${grab.name} - ${Number(grab.population).toLocaleString("en-US")}`);
      }
     });
     res.render('page', {
@@ -95,8 +97,7 @@ app.get('/regions', (req, res) => {
       //count = must count countries per region
       const grab = {"region":country.region, "count": country.count}
       console.log(grab.region, grab.count);
-      results.push(`${grab.region}, - ${grab.count}`);
-
+      results.push(`${grab.region} - ${grab.count}`);
     });
     res.render('page', {
       heading: 'Regions of the World',
