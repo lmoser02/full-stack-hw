@@ -41,5 +41,8 @@ The exercises in this assignment are:
 4. Form submission exercise
 5. Express session exercise
 6. Templates exercise
+   For all that require nodemon user will need to run
+   npx nodemon <filename> from the command line. Then follow the link.
+   The rest can be ran by typing node <filename> from command line.
 
 ## Homework 5 - Frameworks
