@@ -53,7 +53,7 @@ app.get('/capitals', (req, res) => {
     });
 
   })
-  .catch((error) => console.log("Error", error))
+  .catch((error) => console.log("There was an error loading page", error))
 });
 
 app.get('/populous', (req, res) => {
@@ -68,10 +68,13 @@ app.get('/populous', (req, res) => {
   .then((response)=> response.json())
   .then((data) => {
     let results = [];
+    data.sort((x, y) => {
+      return y.population - x.population;
+    });
     data.forEach((country) => {
      if(country.population > 50000000){
       const grab = {"name":country.name, "population": country.population}
-      console.log(grab.name, grab.capital);
+      console.log(grab.name, grab.population);
       results.push(`${grab.name} - ${Number(grab.population).toLocaleString("en-US")}`);
      }
     });
@@ -80,7 +83,7 @@ app.get('/populous', (req, res) => {
       results: results,
     });
   })
-  .catch((error) => console.log("Error", error))
+  .catch((error) => console.log("There was an error loading page", error))
 });
 
 app.get('/regions', (req, res) => {
@@ -93,18 +96,28 @@ app.get('/regions', (req, res) => {
   .then((response)=> response.json())
   .then((data) => {
     let results = [];
+    let region_results = [];
     data.forEach((country) => {
-      //count = must count countries per region
-      const grab = {"region":country.region, "count": country.count}
-      console.log(grab.region, grab.count);
-      results.push(`${grab.region} - ${grab.count}`);
+     if(country.region != ''){
+       if(region_results[country.region] != null){
+         region_results[country.region] +=1;
+       
+       }
+       else{
+         region_results[country.region] = 1;
+       }
+     }
     });
+    const amount = Object.keys(region_results);
+    for(let i = 0; i < amount.length; i++){
+      results.push(`${amount[i]}- ${region_results[amount[i]]}`)
+    }
     res.render('page', {
       heading: 'Regions of the World',
       results: results,
     });
   })
-  .catch((error) => console.log("Error", error))
+  .catch((error) => console.log("There was an error loading page.", error))
 });
 
 app.listen(port, () => {
