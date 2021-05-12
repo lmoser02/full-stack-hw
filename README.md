@@ -46,3 +46,8 @@ The exercises in this assignment are:
    The rest can be ran by typing node <filename> from command line.
 
 ## Homework 5 - Frameworks
+
+The readme's for both react tutorials have instrutcitons on how to run
+For socket.io you will need to run node <filename>.js on the command line
+For the two react tutorials they had us use naming conventions for the files and therefore
+they are not named as was instructed.
